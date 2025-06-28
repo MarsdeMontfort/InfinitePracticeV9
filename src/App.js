@@ -5396,13 +5396,13 @@ export default function App() {
                 }}
               >
                 {ALL_CATEGORIES.map((cat) => {
-                  const total = pool.filter((q) =>
-                    q.category.includes(cat)
-                  ).length;
-                  const correct = pool.filter(
-                    (q) =>
-                      q.category.includes(cat) && questionStatus[q.id]?.correct
-                  ).length;
+                  const total = ALL_QUESTIONS.filter(
+  (q) => q.category.includes(cat) && questionStatus[q.id]
+).length;
+const correct = ALL_QUESTIONS.filter(
+  (q) => q.category.includes(cat) && questionStatus[q.id]?.correct
+).length;
+
                   const percent =
                     total > 0 ? ((correct / total) * 100).toFixed(1) : "0.0";
 
